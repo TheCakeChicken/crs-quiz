@@ -13,11 +13,13 @@ const questionText = $('#questionText');
 const answerInput = $('#crsInput');
 
 const resultText = $('#resultText');
+const resultTable = $('#resultTable');
 
 var currentQuestion = 0;
 var currentQuestionIndex = 0;
 var currentScore = 0;
 var stations = [];
+var resultBreakdown = [];
 
 var questionsToDo = 0;
 var coveredIndexes = [];
@@ -51,6 +53,7 @@ function startGame(qCount) {
     currentQuestion = 0;
     currentScore = 0;
     coveredIndexes = [];
+    resultBreakdown = [];
 
     currentQuestionIndex = getNextQuestionIndex();
 
@@ -78,6 +81,9 @@ function checkAnswer() {
         scoreText.html(currentScore);
     }
 
+    var breakdown = [`${(currentQuestion + 1)}`, stations[currentQuestionIndex].name, stations[currentQuestionIndex].crs, answer.toUpperCase(), answer === stations[currentQuestionIndex].crs.toLowerCase() ? '✅' : '❌'];
+    resultBreakdown.push(breakdown);
+
     answerInput.val('');
     currentQuestion++;
 
@@ -89,7 +95,14 @@ function checkAnswer() {
     } else {
         gameElement.hide();
 
-        resultText.html('You scored ' + currentScore + ' out of ' + questionsToDo + ' (' + ((currentScore / questionsToDo) * 100).toFixed(2) + '%)');
+        // Set result table
+        resultTable.html('');
+        resultBreakdown.forEach((row) => {
+            resultTable.append(`<tr><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td><td>${row[4]}</td></tr>`);
+        });
+
+        // Set result text
+        resultText.html('🎉 You scored <strong>' + currentScore + '</strong> out of <strong>' + questionsToDo + '</strong> (' + ((currentScore / questionsToDo) * 100).toFixed(0) + '%)');
         resultElement.show();
     }
 

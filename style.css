@@ -69,6 +69,11 @@ input {
     gap: 4rem;
 }
 
+#resultTable > tr > td {
+    text-align: center;
+    padding: 0.25rem;
+}
+
 .stats {
     width: 100%;
     display: flex;
