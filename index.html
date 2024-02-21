@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>high quality crs quiz</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>CRS Quiz</h1>
+            <p>How well do you know Britain's <span id="stationCount">0</span> railway stations?</p>
+        </div>
+
+        <div class="game-container">
+            <div id="start" class="menu">
+                <button id="startButton" onclick="startGame(25)">Start (Basic, 25 stations)</button>
+                <button id="startButton" onclick="startGame(50)">Start (Easy, 50 stations)</button>
+                <button id="startButton" onclick="startGame(250)">Start (Moderate, 250 stations)</button>
+                <button id="startButton" onclick="startGame()">Start (Masochist, All stations)</button>
+            </div>
+
+            <div id="game">
+                <form class="game-form" onsubmit="return checkAnswer()">
+                    <p id="questionText" class="question">Aberdeen</p>
+
+                    <input type="text" id="crsInput" name="crs" autocomplete="off">
+                    <button type="submit">✅</button>
+                </form>
+
+                <div class="stats">
+                    <p>Question <span id="questionNumber">0</span> of <span id="questionCount">0</span></p>
+                    <p class="right">Score: <span id="score">0</span></p>
+                </div>
+            </div>
+
+            <div id="result">
+                <p id="resultText">You scored 2,500 / 2,500 (100.00%)</p>
+
+                <button id="retryButton" onclick="reset()">Play again</button>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="game.js"></script>
+    </body>
+</html>

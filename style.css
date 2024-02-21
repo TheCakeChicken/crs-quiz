@@ -1,0 +1,102 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-color: #f5f5f5;
+}
+
+input {
+    text-align: center;
+}
+
+.game-container {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 2rem;
+}
+
+.header {
+    padding: 2rem;
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 2rem;
+}
+
+#game {
+    font-size: large;
+    width: 100%;
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 4rem;
+}
+
+#result {
+    font-size: large;
+    width: 100%;
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 4rem;
+}
+
+.stats {
+    width: 100%;
+    display: flex;
+}
+
+.game-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+.stats > .right {
+    margin-left: auto;
+}
+
+.question {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+    #game {
+        width: 50%;
+    }
+
+    .game-form {
+        width: 75%;
+    }
+}
