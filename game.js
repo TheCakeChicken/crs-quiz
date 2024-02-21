@@ -108,7 +108,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Set number
         stationCountSpan.html(stations.length.toLocaleString());
-
-        startGame(5);
     });
 });
