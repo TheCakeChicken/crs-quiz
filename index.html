@@ -30,7 +30,10 @@
 
             <div id="game">
                 <form class="game-form" onsubmit="return checkAnswer()">
-                    <p id="questionText" class="question">Aberdeen</p>
+                    <div>
+                        <p id="questionText" class="question">Aberdeen</p>
+                        <p class="subquestion">Enter the station's three letter CRS code</p>
+                    </div>
 
                     <input type="text" id="crsInput" name="crs" autocomplete="off">
                     <button type="submit">✅</button>

@@ -91,6 +91,11 @@ input {
     font-weight: bold;
 }
 
+.subquestion {
+    text-align: center;
+    font-size: small;
+}
+
 @media screen and (min-width: 768px) {
     #game {
         width: 50%;
